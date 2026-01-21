@@ -1,6 +1,6 @@
 ---
 name: status
-description: View the current state of the capability ecosystem
+description: View the current state of the skill ecosystem
 ---
 
 # STATUS - Ecosystem Overview
@@ -15,7 +15,7 @@ Observe the current state of all capabilities.
 Scan .github/skills/**/SKILL.md
 ```
 
-### 2. For Each Capability, Extract
+### 2. For Each Skill, Extract
 
 - name (from frontmatter)
 - domain

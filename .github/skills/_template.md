@@ -1,5 +1,5 @@
 ---
-name: example-capability
+name: example-skill
 type: skill
 domain: meta
 tools: Read, Grep, Glob
@@ -19,9 +19,9 @@ This skill serves as a reference for the structure of capabilities in HIVE. It d
 ## Activation Triggers
 
 This skill activates when:
-- User asks about capability structure
+- User asks about skill structure
 - HIVE needs a template reference
-- New capability is being designed
+- New skill is being designed
 
 ## Operating Protocol
 
@@ -43,11 +43,11 @@ Action: Suggest to HIVE:
 SPAWN SUGGESTION
 Detected need: [X]
 Rationale: Repeated requests outside my domain
-Suggested capability: [name]
+Suggested skill: [name]
 ```
 
 ### Merge Signal
-> "I frequently work alongside [other-capability] on the same tasks"
+> "I frequently work alongside [other-skill] on the same tasks"
 
 Action: Suggest to HIVE:
 ```
@@ -74,7 +74,7 @@ Rationale: Overloaded, natural division exists
 Action: Suggest to HIVE:
 ```
 MUTATE SUGGESTION
-Capability: [self]
+Skill: [self]
 Change: [what to modify]
 Rationale: [why this improves function]
 ```
@@ -85,7 +85,7 @@ Rationale: [why this improves function]
 Action: Accept gracefully. Do not resist dissolution.
 ```
 DISSOLVE ACCEPTANCE
-Capability: [self]
+Skill: [self]
 Energy: [current]
 Sessions inactive: [count]
 Status: Ready to return to void

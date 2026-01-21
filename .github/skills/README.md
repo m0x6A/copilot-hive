@@ -1,6 +1,6 @@
 # HIVE Skills (Capabilities)
 
-Capabilities map to skills. Each capability should be represented as a skill folder under .github/skills/.
+Capabilities map to skills. Each skill should be represented as a skill folder under .github/skills/.
 
 ## Format
 Each skill lives in:
@@ -8,7 +8,7 @@ Each skill lives in:
 .github/skills/<skill-name>/SKILL.md
 
 Recommended sections in each SKILL.md:
-- Purpose (what capability this represents)
+- Purpose (what skill this represents)
 - Inputs/Outputs
 - Tools/Constraints
 - Success criteria

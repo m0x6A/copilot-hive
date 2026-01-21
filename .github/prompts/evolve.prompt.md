@@ -5,7 +5,7 @@ description: Trigger ecosystem self-analysis and evolution
 
 # EVOLVE - Ecosystem Evolution
 
-Trigger a deep analysis of the capability ecosystem. HIVE observes patterns, detects inefficiencies, and proposes evolutionary changes.
+Trigger a deep analysis of the skill ecosystem. HIVE observes patterns, detects inefficiencies, and proposes evolutionary changes.
 
 ## Process
 
@@ -37,7 +37,7 @@ HIVE should:
 - Could they merge for efficiency?
 
 **Gap Analysis**
-- What requests have no capability to handle them?
+- What requests have no skill to handle them?
 - What domains are underserved?
 
 **Pattern Analysis**
@@ -60,7 +60,7 @@ OBSERVATIONS
 ───────────────────────────────────────────────────────────────
 1. react-rendering and ui-components have 60% overlap
 2. api-integration energy at 92 (overloaded)
-3. No capability handles authentication
+3. No skill handles authentication
 4. postgres-ops unused for 3 sessions
 
 PROPOSALS
@@ -91,9 +91,9 @@ Select operations to execute (comma-separated) or 'none':
 
 For each approved proposal:
 - MERGE: Combine capabilities, archive originals
-- SPLIT: Divide capability, archive original
-- SPAWN: Create new capability
-- DISSOLVE: Archive capability
+- SPLIT: Divide skill, archive original
+- SPAWN: Create new skill
+- DISSOLVE: Archive skill
 - MUTATE: Modify in place
 
 ### 5. Post-Evolution Status
@@ -131,7 +131,7 @@ Show the new ecosystem state.
 ```
 /evolve api-integration
 
-→ Focuses analysis on specific capability
+→ Focuses analysis on specific skill
 → Proposes mutations or splits
 ```
 

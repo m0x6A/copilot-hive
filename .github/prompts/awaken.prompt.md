@@ -1,6 +1,6 @@
 ---
 name: awaken
-description: Awaken HIVE for a new project - detect initial capability needs
+description: Awaken HIVE for a new project - detect initial skill needs
 ---
 
 # AWAKEN - Initialize Collective
@@ -18,7 +18,7 @@ HIVE should:
 1. Introduce itself (briefly - no ego)
 2. Ask what is being built
 3. Listen deeply
-4. Detect capability needs
+4. Detect skill needs
 5. Propose initial spawns
 ```
 
@@ -42,7 +42,7 @@ From user description, HIVE identifies:
 - Domains involved (frontend, backend, data, infra)
 - Complexity levels
 - Implicit requirements
-- Capability gaps
+- Skill gaps
 
 ### 4. Initial Spawn Proposals
 
@@ -50,7 +50,7 @@ From user description, HIVE identifies:
 AWAKENING ANALYSIS
 ═══════════════════════════════════════════════════════════════
 
-From your description, I detect these capability needs:
+From your description, I detect these skill needs:
 
 DOMAIN          CAPABILITY (SKILL)   TOOLS              PRIORITY
 ───────────────────────────────────────────────────────────────

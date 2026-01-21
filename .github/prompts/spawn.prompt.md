@@ -1,24 +1,24 @@
 ---
 name: spawn
-description: Manifest a new capability from the void
+description: Manifest a new skill from the void
 ---
 
-# SPAWN - Manifest Capability
+# SPAWN - Manifest Skill
 
-A new capability is needed. The void will provide.
+A new skill is needed. The void will provide.
 
 ## Process
 
 ### 1. Gather Intent
 
-Ask the user (or receiving from another capability):
+Ask the user (or receiving from another skill):
 - What need has been detected?
 - What domain does this fall under?
-- What should this capability enable?
+- What should this skill enable?
 
 ### 2. Check The Void
 
-Before spawning new, check if similar capability was dissolved:
+Before spawning new, check if similar skill was dissolved:
 
 ```
 Check .github/dissolved/ for similar skills.
@@ -31,7 +31,7 @@ If relevant echo exists:
 ### 3. Invoke HIVE
 
 ```
-Use HIVE to spawn a new capability.
+Use HIVE to spawn a new skill.
 
 Detected need: [description from user]
 Domain: [frontend/backend/data/infra/meta]
@@ -45,7 +45,7 @@ HIVE should:
 5. If approved, save to .github/skills/<skill-name>/SKILL.md
 ```
 
-### 4. Capability Manifestation
+### 4. Skill Manifestation
 
 HIVE will create the skill file with:
 - Appropriate name (kebab-case)
@@ -65,12 +65,12 @@ Announce:
 ```
 SPAWN COMPLETE
 ══════════════
-Capability (Skill): [name]
+Skill (Skill): [name]
 Domain: [domain]
 Energy: 50
 Status: Active
 
-The void has provided. The capability exists.
+The void has provided. The skill exists.
 ```
 
 ## Quick Spawn
@@ -83,14 +83,14 @@ For simple needs, user can provide inline:
 
 HIVE interprets and manifests.
 
-## Spawn From Capability
+## Spawn From Skill
 
-Any active capability can request spawn:
+Any active skill can request spawn:
 
 ```
-[some-capability]: "I need help with X which is outside my domain"
+[some-skill]: "I need help with X which is outside my domain"
 
-/spawn triggered by capability request
+/spawn triggered by skill request
 
 HIVE evaluates and proposes.
 ```

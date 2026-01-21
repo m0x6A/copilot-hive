@@ -29,7 +29,7 @@ We embrace AI-native patterns:
 - Human role labels are used only to identify capabilities, not to create hierarchy.
 
 ## Source of capabilities
-Capability templates and inspirations are drawn from the Awesome Copilot agents catalog:
+Skill templates and inspirations are drawn from the Awesome Copilot agents catalog:
 https://github.com/github/awesome-copilot/tree/main/agents
 
 ## Best practices for Copilot agents
@@ -42,7 +42,7 @@ Use these best practices (from GitHub Copilot guidance):
 
 ## Core Concepts
 ### Capabilities (not roles)
-A capability is a crystallized competence. It exists when needed, dissolves when not.
+A skill is a crystallized competence. It exists when needed, dissolves when not.
 
 .hive/capabilities/ (conceptual)
 - react-rendering.md      # EXISTS - actively used
@@ -53,7 +53,7 @@ A capability is a crystallized competence. It exists when needed, dissolves when
 - legacy-jquery.md        # DISSOLVED - no longer needed
 - [archived capabilities]
 
-> NOTE: In Copilot terms, the capability definitions map to skills under .github/skills/.
+> NOTE: In Copilot terms, the skill definitions map to skills under .github/skills/.
 
 ## Lifecycle
     ┌─────────┐
@@ -73,26 +73,26 @@ A capability is a crystallized competence. It exists when needed, dissolves when
          │                                    │
          ├── SPLIT ──► 2 capabilities         │
          │                                    │
-         ├── MERGE ──► 1 combined capability  │
+         ├── MERGE ──► 1 combined skill  │
          │                                    │
          └── DISSOLVE ────────────────────────┘
 
 ## Operations
 Operation | Trigger | Result
 ---|---|---
-SPAWN | Need detected | New capability manifests
-SPLIT | Capability overloaded | Divides into specialized parts
-MERGE | Overlap detected | Combines into unified capability
+SPAWN | Need detected | New skill manifests
+SPLIT | Skill overloaded | Divides into specialized parts
+MERGE | Overlap detected | Combines into unified skill
 MUTATE | Inefficiency detected | Self-modifies prompt/tools
 DISSOLVE | No longer needed | Returns to void, archived
 
 ## Commands (conceptual)
 Command | Purpose
 ---|---
-/spawn | Manifest a new capability
+/spawn | Manifest a new skill
 /status | View active capabilities and their energy
 /evolve | Trigger self-analysis and evolution
-/dissolve | Return a capability to void
+/dissolve | Return a skill to void
 
 ## Structure (Copilot-aligned)
 .
@@ -100,7 +100,7 @@ Command | Purpose
 └── .github/
     ├── agents/                        # Custom Copilot agents (minimal routing)
     │   └── hive.agent.md
-    ├── skills/                         # Capability mapping to skills
+    ├── skills/                         # Skill mapping to skills
     │   └── README.md
     └── prompts/                        # Optional reusable prompts
 
@@ -114,16 +114,16 @@ SPAWN: visualization
 SPAWN: state-sync
 
 2) During Development
-If a capability overlaps another, prefer SPAWN or MERGE rather than expanding scope.
+If a skill overlaps another, prefer SPAWN or MERGE rather than expanding scope.
 
 3) Evolution
-If a capability is idle across sessions, consider MUTATE or DISSOLVE.
+If a skill is idle across sessions, consider MUTATE or DISSOLVE.
 
 4) Self-Modification
 Capabilities can propose self-modifications, which must be approved before adoption.
 
 ## Energy System
-Each capability has energy (0-100):
+Each skill has energy (0-100):
 - Spawns at: 50
 - Increases: When actively used (+10 per task)
 - Decreases: Each session without use (-15)

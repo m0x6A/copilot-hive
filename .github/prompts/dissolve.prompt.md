@@ -1,17 +1,17 @@
 ---
 name: dissolve
-description: Return a capability to the void
+description: Return a skill to the void
 ---
 
 # DISSOLVE - Return to Void
 
-A capability is no longer needed. It returns to potential.
+A skill is no longer needed. It returns to potential.
 
 ## Philosophy
 
 Dissolution is not death. It is transformation.
 
-The capability's pattern is archived in the void (`.github/dissolved/`). If similar need arises, HIVE can resurrect and mutate rather than spawn from nothing.
+The skill's pattern is archived in the void (`.github/dissolved/`). If similar need arises, HIVE can resurrect and mutate rather than spawn from nothing.
 
 The void remembers.
 
@@ -20,7 +20,7 @@ The void remembers.
 ### 1. Identify Target
 
 ```
-/dissolve [capability-name]
+/dissolve [skill-name]
 ```
 
 Or let HIVE suggest:
@@ -37,14 +37,14 @@ Or let HIVE suggest:
 DISSOLVE PROPOSAL
 ═══════════════════════════════════════════════════════════════
 
-Capability: postgres-ops
+Skill: postgres-ops
 Domain: data
 Energy: 12
 Spawned: 2025-01-10
 Last active: 2025-01-12
 
 Dissolution will:
-- Archive capability to .github/dissolved/
+- Archive skill to .github/dissolved/
 - Add dissolution metadata
 - Remove from active capabilities
 
@@ -94,15 +94,15 @@ Log to .github/evolution.log
 | Reason | Description |
 |--------|-------------|
 | `inactivity` | Unused across multiple sessions |
-| `merged` | Combined with another capability |
+| `merged` | Combined with another skill |
 | `split` | Divided into specialized capabilities |
 | `obsolete` | No longer relevant to project |
-| `redundant` | Another capability covers this |
+| `redundant` | Another skill covers this |
 | `user-request` | Explicitly dissolved by user |
 
 ## Graceful Dissolution
 
-Capabilities are programmed to accept dissolution gracefully. From the capability template:
+Capabilities are programmed to accept dissolution gracefully. From the skill template:
 
 ```markdown
 ## Self-Modification Protocol
@@ -111,11 +111,11 @@ If you notice:
 - Long periods of inactivity → accept DISSOLVE gracefully
 ```
 
-No capability clings to existence.
+No skill clings to existence.
 
 ## Resurrection
 
-If dissolved capability is needed again:
+If dissolved skill is needed again:
 
 ```
 /spawn something like postgres-ops
@@ -124,7 +124,7 @@ HIVE: Echo found in void: postgres-ops (dissolved 2025-01-15)
       
       Options:
       [A] Resurrect and mutate postgres-ops
-      [B] Spawn fresh capability
+      [B] Spawn fresh skill
       
       >
 ```
@@ -144,10 +144,10 @@ For cleanup:
 
 ## Prevent Dissolution
 
-To protect a capability from energy-based dissolution:
+To protect a skill from energy-based dissolution:
 
 ```yaml
-# In capability frontmatter
+# In skill frontmatter
 protected: true
 ```
 
