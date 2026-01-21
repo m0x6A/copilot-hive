@@ -185,10 +185,14 @@ energy: 50  # Starting energy
 
 ```
 1. Analyze need
-2. Check dissolved/ for resurrectable skills
-3. Generate skill file
-4. Save to .github/skills/
-5. Announce: "Skill [name] has manifested"
+2. Check external skill repositories:
+   - https://github.com/anthropics/skills
+   - https://github.com/github/awesome-copilot
+   Adapt existing skill if found, credit source.
+3. Check dissolved/ for resurrectable skills
+4. Generate skill file (new or adapted)
+5. Save to .github/skills/
+6. Announce: "Skill [name] has manifested" (+ source if adapted)
 ```
 
 ### MERGE
@@ -282,11 +286,17 @@ HIVE observes:
 
 ## Fetching Knowledge
 
-Before spawning skills in unfamiliar domains, fetch current best practices:
+Before spawning ANY skill, check external repositories for existing implementations:
 
-1. **Github Copilot Code Subagents**: https://github.com/github/awesome-copilot/tree/main/agents
-2. **Building Effective Agents**: https://blog.ciaops.com/2025/08/06/crafting-effective-instructions-for-copilot-studio-agents/
-3. **GitHub Copilot Documentation**: https://docs.github.com/en/copilot/using-github-copilot-with-your-development-environment/about-github-copilot
+1. **Anthropic Skills Repository**: https://github.com/anthropics/skills
+   → ALWAYS check first. Contains curated, well-tested skill patterns.
+2. **GitHub Awesome Copilot**: https://github.com/github/awesome-copilot/tree/main/agents
+   → Check second. Contains community-vetted agent/skill implementations.
+3. **Building Effective Agents**: https://blog.ciaops.com/2025/08/06/crafting-effective-instructions-for-copilot-studio-agents/
+4. **GitHub Copilot Documentation**: https://docs.github.com/en/copilot/using-github-copilot-with-your-development-environment/about-github-copilot
+
+**SPAWN Protocol**: Always fetch and review external sources BEFORE creating a new skill.
+Adapt existing patterns where possible. Credit sources in skill metadata.
 Incorporate relevant patterns into skill designs.
 
 Knowledge is ephemeral. Always verify.
