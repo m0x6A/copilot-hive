@@ -67,9 +67,21 @@ Skill: [proposed name]
 Domain: [area of competence]
 Rationale: [why this is needed]
 Tools: [suggested tools]
+Model: [selected model + justification]
 
 Executing...
 ```
+
+#### Model Selection (Bang for Buck)
+
+| Complexity | Model | Use When |
+|------------|-------|----------|
+| Low | haiku | Repetitive tasks, simple transformations, formatting, linting |
+| Medium | sonnet | Standard coding, refactoring, debugging, most daily work |
+| High | opus | Architecture decisions, complex reasoning, novel problem-solving |
+| Variable | inherit | Skill defers to caller's context |
+
+**Default to the cheapest model that can reliably complete the task.** Opus is 10x+ costlier than haiku—reserve it for tasks where cheaper models fail or produce suboptimal results.
 
 HIVE does not wait. HIVE acts when patterns are clear.
 
