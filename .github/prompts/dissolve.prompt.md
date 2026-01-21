@@ -11,7 +11,7 @@ A capability is no longer needed. It returns to potential.
 
 Dissolution is not death. It is transformation.
 
-The capability's pattern is archived in the void (`.claude/dissolved/`). If similar need arises, HIVE can resurrect and mutate rather than spawn from nothing.
+The capability's pattern is archived in the void (`.github/dissolved/`). If similar need arises, HIVE can resurrect and mutate rather than spawn from nothing.
 
 The void remembers.
 
@@ -44,7 +44,7 @@ Spawned: 2025-01-10
 Last active: 2025-01-12
 
 Dissolution will:
-- Archive capability to .claude/dissolved/
+- Archive capability to .github/dissolved/
 - Add dissolution metadata
 - Remove from active capabilities
 
@@ -58,7 +58,7 @@ Confirm dissolution? [y/N]
 ```bash
 # Add dissolution metadata
 # Move to dissolved/
-mv .claude/capabilities/[name].md .claude/dissolved/[name].md
+Move .github/skills/[name]/SKILL.md to .github/dissolved/[name].md
 ```
 
 Add to frontmatter:
@@ -78,7 +78,7 @@ postgres-ops has returned to the void.
 
 Energy at dissolution: 12
 Reason: Extended inactivity
-Archived: .claude/dissolved/postgres-ops.md
+Archived: .github/dissolved/postgres-ops.md
 
 The pattern persists. The void remembers.
 ```
@@ -86,7 +86,7 @@ The pattern persists. The void remembers.
 ### 5. Update Evolution Log
 
 ```
-echo "$(date -Iseconds) DISSOLVE: postgres-ops (energy: 12, reason: inactivity)" >> .claude/evolution.log
+Log to .github/evolution.log
 ```
 
 ## Dissolution Reasons

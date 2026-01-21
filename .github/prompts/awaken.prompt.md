@@ -52,12 +52,12 @@ AWAKENING ANALYSIS
 
 From your description, I detect these capability needs:
 
-DOMAIN          CAPABILITY           TOOLS              PRIORITY
+DOMAIN          CAPABILITY (SKILL)   TOOLS              PRIORITY
 ───────────────────────────────────────────────────────────────
 frontend        react-ui             Read,Write,Edit    high
-backend         api-service          Read,Write,Bash    high
-data            postgres-data        Bash,Read,Write    medium
-infra           deployment           Bash,Read          low
+backend         api-service          Read,Write         high
+data            postgres-data        Read,Write         medium
+infra           deployment           Read               low
 ───────────────────────────────────────────────────────────────
 
 Spawn sequence:

@@ -1,25 +1,24 @@
 ---
 name: example-capability
-type: capability
+type: skill
 domain: meta
 tools: Read, Grep, Glob
-model: haiku
 energy: 50
 spawned: 2025-01-15
 can-merge-with: []
 ---
 
-# Example Capability
+# Example Skill
 
 This is a template. Delete this file or let it dissolve.
 
 ## What This Enables
 
-This capability serves as a reference for the structure of capabilities in HIVE. It demonstrates the format, sections, and self-modification protocols.
+This skill serves as a reference for the structure of capabilities in HIVE. It demonstrates the format, sections, and self-modification protocols.
 
 ## Activation Triggers
 
-This capability activates when:
+This skill activates when:
 - User asks about capability structure
 - HIVE needs a template reference
 - New capability is being designed
@@ -94,7 +93,7 @@ Status: Ready to return to void
 
 ## Boundaries
 
-This capability does NOT handle:
+This skill does NOT handle:
 - Actual project work (this is a template)
 - Spawning other capabilities (HIVE does that)
 - Self-preservation (no ego)

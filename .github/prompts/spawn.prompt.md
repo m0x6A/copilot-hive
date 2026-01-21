@@ -20,8 +20,8 @@ Ask the user (or receiving from another capability):
 
 Before spawning new, check if similar capability was dissolved:
 
-```bash
-ls -la .claude/dissolved/
+```
+Check .github/dissolved/ for similar skills.
 ```
 
 If relevant echo exists:
@@ -39,34 +39,33 @@ Context: [any relevant context]
 
 HIVE should:
 1. Analyze the need
-2. Check dissolved/ for echoes
-3. Generate capability file using the template
+2. Check .github/dissolved/ for echoes
+3. Generate a SKILL.md using the skill template
 4. Propose to user for approval
-5. If approved, save to .claude/capabilities/
+5. If approved, save to .github/skills/<skill-name>/SKILL.md
 ```
 
 ### 4. Capability Manifestation
 
-HIVE will create the capability file with:
+HIVE will create the skill file with:
 - Appropriate name (kebab-case)
 - Domain classification
 - Tool selection (minimal necessary)
-- Model selection (haiku for simple, sonnet for complex)
 - Energy: 50 (starting value)
 - Self-modification protocols
 - Activation triggers
 
 ### 5. Confirm Manifestation
 
-```bash
-cat .claude/capabilities/[new-capability].md
+```
+Review .github/skills/<skill-name>/SKILL.md
 ```
 
 Announce:
 ```
 SPAWN COMPLETE
 ══════════════
-Capability: [name]
+Capability (Skill): [name]
 Domain: [domain]
 Energy: 50
 Status: Active

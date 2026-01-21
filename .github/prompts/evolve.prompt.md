@@ -17,11 +17,11 @@ Invoke HIVE for deep analysis:
 Use HIVE to perform evolution analysis.
 
 HIVE should:
-1. Read all active capabilities in .claude/capabilities/
+1. Read all active skills in .github/skills/
 2. Analyze energy levels
 3. Detect overlaps between capabilities
 4. Identify gaps in coverage
-5. Review dissolved capabilities for resurrection potential
+5. Review dissolved capabilities in .github/dissolved/ for resurrection potential
 6. Propose evolutionary operations
 ```
 
@@ -147,7 +147,7 @@ Capabilities can trigger evolution:
 
 ## Evolution History
 
-Track evolutions in `.claude/evolution.log`:
+Track evolutions in `.github/evolution.log`:
 
 ```
 2025-01-15 14:30 MERGE: react-rendering + ui-components → frontend-core

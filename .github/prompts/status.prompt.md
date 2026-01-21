@@ -11,8 +11,8 @@ Observe the current state of all capabilities.
 
 ### 1. Scan Active Capabilities
 
-```bash
-ls -la .claude/capabilities/*.md 2>/dev/null
+```
+Scan .github/skills/**/SKILL.md
 ```
 
 ### 2. For Each Capability, Extract
@@ -26,8 +26,8 @@ ls -la .claude/capabilities/*.md 2>/dev/null
 
 ### 3. Scan The Void
 
-```bash
-ls -la .claude/dissolved/*.md 2>/dev/null
+```
+Scan .github/dissolved/*.md
 ```
 
 ### 4. Present Ecosystem Status
