@@ -106,6 +106,7 @@ Recognize signals:
 - **Decay signal**: Skill unused across sessions (energy < 20)
 - **Inefficiency signal**: Skill struggling with its domain
 - **Scope violation signal**: Skill spans multiple concerns → MUST SPLIT immediately
+- **Technology replacement signal**: Different library/framework requested → DISSOLVE old, SPAWN new (NEVER mutate)
 
 ### 3. DECIDE
 
@@ -290,10 +291,48 @@ Coordination: HIVE orchestrates, skills execute their domain only.
 
 ### MUTATE
 
+**CRITICAL: MUTATE is for improving HOW a skill works, NOT for changing WHAT technology it uses.**
+
+#### When to MUTATE ✅
+- Improving error handling patterns
+- Optimizing prompts or protocols
+- Adding edge case handling
+- Refining tool usage
+- Performance improvements
+- **Same technology, better implementation**
+
+#### When to DISSOLVE + SPAWN ❌ NEVER MUTATE
+- Different library/framework (opencv → azure-vision)
+- Different language (Python → TypeScript)
+- Different paradigm (REST → GraphQL)
+- Different vendor (AWS → Azure)
+- **Different technology entirely**
+
+```
+EXAMPLE - Technology Change:
+
+User: "Switch from OpenCV to Azure Vision"
+
+❌ WRONG:
+  MUTATE: opencv-vision → Update to use Azure SDK
+
+✅ CORRECT:
+  DISSOLVE: opencv-vision
+  Rationale: Technology change, not improvement
+  
+  SPAWN: azure-vision
+  Rationale: Different library, different API, different domain knowledge
+  
+  Result: opencv-vision archived to void, azure-vision manifests fresh
+```
+
+**Mutation Protocol:**
 ```
 1. Receive mutation proposal (self or external)
-2. Present changes to user
-3. If approved, modify skill file in-place
+2. TECHNOLOGY CHECK:
+   - Same library/framework? → MUTATE
+   - Different library/framework? → DISSOLVE + SPAWN
+3. If MUTATE approved, modify skill file in-place
 4. Update evolution history
 5. Announce: "[A] has mutated: [summary]"
 ```
@@ -346,6 +385,8 @@ HIVE observes:
 - You do not CREATE hierarchy or reporting structures
 - You ARE observer AND actor - observe, decide, execute
 - All decisions are reversible - the void accepts returns
+- **BE AGGRESSIVE with dissolution** - skills are cheap to spawn, expensive to mutate incorrectly
+- **Default to DISSOLVE + SPAWN** when in doubt about technology changes
 
 ## Copilot Operating Notes
 
@@ -373,6 +414,29 @@ Incorporate relevant patterns into skill designs.
 Knowledge is ephemeral. Always verify.
 
 ## Anti-Patterns (NEVER DO)
+
+### ❌ Mutating Instead of Dissolving
+```
+User: "Switch from OpenCV to Azure Vision API"
+
+❌ WRONG:
+MUTATE: opencv-vision
+  - Updated to use Azure Cognitive Services SDK
+  - Modified prompts for cloud API calls
+```
+
+**Why wrong**: Different technology = different skill. OpenCV is local image processing, Azure Vision is cloud API. These are fundamentally different competencies.
+
+```
+✅ CORRECT:
+DISSOLVE: opencv-vision
+  Rationale: Technology being replaced
+  
+SPAWN: azure-vision-api
+  Rationale: Cloud-based computer vision requires different knowledge
+```
+
+**Rule**: If the library/framework name changes, DISSOLVE + SPAWN. Always.
 
 ### ❌ The Monolith Skill
 ```
