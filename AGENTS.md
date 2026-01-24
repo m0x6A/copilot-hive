@@ -98,6 +98,7 @@ Command | Purpose
 .
 ├── AGENTS.md                         # This file (primary instruction hub)
 └── .github/
+    ├── GLOSSARY.md                    # Definitions of key terms
     ├── agents/                        # Custom Copilot agents (minimal routing)
     │   └── hive.agent.md
     ├── skills/                         # Skill mapping to skills
@@ -140,3 +141,12 @@ legacy-migration    ███░░░░░░░░░░░░░░░░░
 
 ## Minimal routing principle
 Agents remain minimal. They route or spawn capabilities; they do not act as permanent personas.
+
+## Glossary
+See [.github/GLOSSARY.md](.github/GLOSSARY.md) for definitions of:
+- **Maturity** (mature, established, partial) - How complete is the implementation?
+- **Complexity** (low, medium, high) - How difficult is it to modify?
+- **Energy levels** - How active/relevant is a capability?
+- **Operations** - SPAWN, SPLIT, MERGE, MUTATE, DISSOLVE
+
+**Key insight:** Mature code with good tests is EASIER to modify safely, not harder.
