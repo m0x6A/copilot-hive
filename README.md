@@ -36,9 +36,15 @@ HIVE is a **coordination layer** for collective intelligence. It observes patter
 copilot-hive/
 ├── AGENTS.md                    # Primary instruction hub for Copilot agents
 ├── README.md                    # This file
+├── .specify/                    # Speckit templates and scripts
+│   ├── memory/                  # Project constitution
+│   ├── templates/               # Spec, plan, tasks templates
+│   └── scripts/                 # Automation scripts
 └── .github/
     ├── agents/
-    │   └── hive.agent.md        # The HIVE coordinator agent
+    │   ├── hive.agent.md        # The HIVE coordinator agent
+    │   ├── speckit.*.agent.md   # Speckit workflow agents
+    │   └── ...
     ├── skills/
     │   ├── README.md            # Skills documentation
     │   └── _template.md         # Template for new skills
@@ -47,7 +53,8 @@ copilot-hive/
     │   ├── spawn.prompt.md      # Manifest a new skill
     │   ├── status.prompt.md     # View ecosystem status
     │   ├── evolve.prompt.md     # Trigger self-analysis and evolution
-    │   └── dissolve.prompt.md   # Return a skill to the void
+    │   ├── dissolve.prompt.md   # Return a skill to the void
+    │   └── speckit.*.prompt.md  # Speckit workflow prompts
     └── dissolved/               # Archive of dissolved skills (the void)
 ```
 
@@ -74,6 +81,54 @@ copilot-hive/
    ```
 
 3. The HIVE agent will be available through Copilot Chat using `@hive`.
+
+---
+
+## 🔧 Speckit Integration
+
+HIVE integrates with **speckit**, a specification-driven development workflow. While HIVE manages dynamic skills, speckit provides the structured process for feature development.
+
+### The Relationship
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                          HIVE                                    │
+│                   (Coordination Layer)                           │
+│                                                                   │
+│  ┌─────────────────────────────────────────────────────────────┐ │
+│  │                    SPECKIT WORKFLOW                          │ │
+│  │  ┌────────┐   ┌────────┐   ┌────────┐   ┌────────────────┐  │ │
+│  │  │ Specify│ → │  Plan  │ → │ Tasks  │ → │   Implement    │  │ │
+│  │  └────────┘   └────────┘   └────────┘   └────────────────┘  │ │
+│  └─────────────────────────────────────────────────────────────┘ │
+│                              ↕                                    │
+│  ┌─────────────────────────────────────────────────────────────┐ │
+│  │                   DYNAMIC SKILLS                             │ │
+│  │   jwt-auth    react-ui    prisma-db    websocket-sync       │ │
+│  │   (spawned)   (spawned)   (spawned)    (spawned)            │ │
+│  └─────────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Key Principles
+
+1. **Speckit agents are immutable** - HIVE never dissolves, mutates, or merges speckit agents
+2. **Speckit provides process** - The workflow from specification to implementation
+3. **Skills provide expertise** - Technology-specific knowledge that speckit invokes
+4. **HIVE coordinates both** - Delegates to speckit stages and spawns skills as needed
+
+### Workflow Stages
+
+| Stage | Agent | Artifacts |
+|-------|-------|-----------|
+| Constitution | `@speckit.constitution` | `.specify/memory/constitution.md` |
+| Specification | `@speckit.specify` | `specs/<feature>/spec.md` |
+| Clarification | `@speckit.clarify` | Updated `spec.md` |
+| Planning | `@speckit.plan` | `plan.md`, `data-model.md`, `contracts/` |
+| Tasks | `@speckit.tasks` | `tasks.md` |
+| Checklists | `@speckit.checklist` | `checklists/*.md` |
+| Analysis | `@speckit.analyze` | Consistency report |
+| Implementation | `@speckit.implement` | Working code |
 
 ---
 
@@ -216,6 +271,8 @@ Return a skill to the void.
 
 Use these prompts with `@hive` in Copilot Chat:
 
+### HIVE Commands
+
 | Prompt | Description |
 |--------|-------------|
 | `@hive /awaken` | Initialize HIVE for a new project |
@@ -224,34 +281,55 @@ Use these prompts with `@hive` in Copilot Chat:
 | `@hive /evolve` | Trigger ecosystem self-analysis |
 | `@hive /dissolve` | Return a skill to the void |
 
-### Example: Awakening HIVE
+### Speckit Workflow Commands
+
+| Prompt | Description |
+|--------|-------------|
+| `/speckit.constitution` | Define or update project principles |
+| `/speckit.specify` | Create a feature specification |
+| `/speckit.clarify` | Clarify underspecified requirements |
+| `/speckit.plan` | Generate technical implementation plan |
+| `/speckit.tasks` | Break plan into actionable tasks |
+| `/speckit.checklist` | Create requirements quality checklist |
+| `/speckit.analyze` | Cross-artifact consistency analysis |
+| `/speckit.implement` | Execute the implementation plan |
+| `/speckit.taskstoissues` | Convert tasks to GitHub issues |
+
+### Example: Full Feature Workflow
 
 ```
-You: @hive /awaken
+You: @hive I want to build user authentication with JWT
 
-HIVE: The void stirs. Describe what you're building. I'll observe the patterns.
+HIVE observes:
+  Request: Feature implementation
+  Speckit state: No spec.md exists
+  
+  Delegating to @speckit.specify for feature specification.
 
-You: I'm building a real-time collaborative document editor.
+[speckit.specify creates feature branch and spec.md]
 
-HIVE: AWAKENING ANALYSIS
-═══════════════════════════════════════════════════════════════
+You: /speckit.plan
 
-Detected patterns:
-- Real-time synchronization
-- Document state management
-- Collaborative editing (CRDT/OT)
-- WebSocket connections
-- User presence indicators
+[speckit.plan creates plan.md, data-model.md, contracts/]
 
-SPAWN DECOMPOSITION
-═══════════════════
-  1. websocket-server     → Connection handling, message routing
-  2. crdt-sync            → Conflict-free replicated data types
-  3. document-state       → Document model, operations
-  4. presence-indicators  → User cursors, selections, avatars
-  5. react-editor-ui      → Editor components, rendering
+HIVE observes:
+  Plan complete. Technology skills needed.
+  
+SPAWN DECISION
+══════════════
+Skill: jwt-auth
+Domain: backend
+Rationale: JWT authentication requires specialized knowledge
 
-Coordination: HIVE orchestrates, skills execute their domain only.
+Skill jwt-auth has manifested.
+
+You: /speckit.tasks
+
+[speckit.tasks creates tasks.md]
+
+You: /speckit.implement
+
+[speckit.implement executes tasks, invoking jwt-auth skill for technical work]
 ```
 
 ---
